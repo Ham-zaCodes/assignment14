@@ -12,11 +12,14 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/api/auth/register", {
-        name,
-        email,
-        password,
-      });
+      await axios.post(
+        "http://assignment14-production.up.railway.app/api/auth/register",
+        {
+          name,
+          email,
+          password,
+        },
+      );
       alert("Account created successfully! Please login.");
       navigate("/login");
     } catch (err) {

@@ -12,9 +12,12 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/products", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const res = await axios.get(
+          "http://assignment14-production.up.railway.app/api/products",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         setProducts(res.data.data || []);
       } catch (err) {
         console.error("Fetch failed", err);
@@ -28,9 +31,12 @@ const Products = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this item?")) {
       try {
-        await axios.delete(`http://localhost:5001/api/products/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.delete(
+          `http://assignment14-production.up.railway.app/api/products/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         setProducts(products.filter((p) => p._id !== id));
       } catch (err) {
         alert("Delete failed");

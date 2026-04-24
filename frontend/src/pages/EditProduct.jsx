@@ -15,7 +15,7 @@ const EditProduct = () => {
     const fetchProduct = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5001/api/products/${id}`,
+          `http://assignment14-production.up.railway.app/api/products/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -37,7 +37,7 @@ const EditProduct = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:5001/api/products/${id}`,
+        `http://assignment14-production.up.railway.app/api/products/${id}`,
         { title, price: Number(price) },
         { headers: { Authorization: `Bearer ${token}` } },
       );
