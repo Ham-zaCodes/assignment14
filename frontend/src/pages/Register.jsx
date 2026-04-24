@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://assignment14-production.up.railway.app/api/auth/register",
+        "https://assignment14-production.up.railway.app/api/auth/register",
         {
           name,
           email,

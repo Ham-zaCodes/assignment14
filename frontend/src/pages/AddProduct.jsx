@@ -13,7 +13,7 @@ const AddProduct = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://assignment14-production.up.railway.app/api/products",
+        "https://assignment14-production.up.railway.app/api/products",
         { title, price: Number(price) },
         { headers: { Authorization: `Bearer ${token}` } },
       );

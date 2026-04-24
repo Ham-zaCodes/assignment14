@@ -13,7 +13,7 @@ const Products = () => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          "http://assignment14-production.up.railway.app/api/products",
+          "https://assignment14-production.up.railway.app/api/products",
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -32,7 +32,7 @@ const Products = () => {
     if (window.confirm("Are you sure you want to delete this item?")) {
       try {
         await axios.delete(
-          `http://assignment14-production.up.railway.app/api/products/${id}`,
+          `https://assignment14-production.up.railway.app/api/products/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           },

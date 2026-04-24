@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://assignment14-production.up.railway.app/api/auth/login",
+        "https://assignment14-production.up.railway.app/api/auth/login",
         {
           email,
           password,
