@@ -9,6 +9,12 @@ const authRoutes = require("./src/routes/authRoutes");
 
 dotenv.config();
 const app = express();
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB Atlas connected successfully"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
+
 app.use(cors());
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -24,10 +30,6 @@ app.get("/", (req, res) => {
 });
 
 // 3. Database Connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Atlas connected successfully"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // 4. Start Server
 const PORT = process.env.PORT || 5001;
